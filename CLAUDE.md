@@ -108,6 +108,12 @@ Immer kennzeichnen, woher eine Aussage stammt. Die Screen-Time-API ist voller un
 | 5 | Trägt der gewählte Weg von der PWA zum iPad, einschließlich Android-Browser und Rückkanal? | Hängt an der offenen Entscheidung zur Zustellung. |
 | 6 | Was meldet die App nach einem Widerruf und nach einem Neustart der App wirklich? | Siehe `authorizationStatus` oben. |
 
+## Repo und Lizenz
+
+- Das Repo ist öffentlich lesbar und steht unter der PolyForm Strict License 1.0.0. Weil das Projekt nicht Open Source ist, heißt es in allen Texten „Quelltext einsehbar“.
+- Geheimnisse wie Schlüssel oder Tokens kommen nie ins Repo, auch nicht in die Commit-Historie.
+- Lesbarer Quelltext zeigt nicht, dass die Store-Version genau daraus gebaut wurde. Texte versprechen das deshalb nicht.
+
 ## Name und Store
 
 - Deutsch: **„Ich zähl bis drei“**, Untertitel „Der Familien-Pausenknopf“. Englisch: **„Count to Three“**.
