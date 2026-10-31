@@ -1,19 +1,21 @@
 # Ich zähl bis drei / Count to Three
 
-iOS-/iPadOS-App, mit der ein Elternteil das Familien-iPad vom eigenen iPhone aus „pausiert“.
+iPadOS-App, mit der ein Elternteil ein geteiltes Familien-iPad vom eigenen Android-Smartphone oder Mac aus „pausiert“.
 
 ## Ziel
 
-- Auf Knopfdruck am Eltern-iPhone erscheint auf dem iPad bei jeder App ein großer, nicht wegklickbarer Hinweis („Ich zähl bis drei – Spielzeit ist vorbei“).
+- Auf Knopfdruck am Eltern-Gerät erscheint auf dem iPad bei jeder App ein großer, nicht wegklickbarer Hinweis („Ich zähl bis drei – Spielzeit ist vorbei“).
 - Ein weiterer Knopfdruck hebt die Sperre auf („Spielzeit!“).
-- Das Eltern-iPhone sieht, ob die Sperre angekommen ist (Quittung) und ob die App auf dem iPad umgangen wurde (Lebenszeichen und Autorisierungsstatus).
+- Das Eltern-Gerät zeigt, ob die Sperre angekommen ist (Quittung) und ob die App auf dem iPad umgangen wurde (Lebenszeichen und Autorisierungsstatus).
 
 Es ist eine **sanfte Sperre mit Nachweis**, keine unüberwindbare Sperre. Alle leben im selben Haushalt: Wird die Sperre umgangen, reicht es, davon zu erfahren.
 
 ## Rahmenbedingungen
 
 - Das iPad nutzt einen gemeinsamen Familien-Apple-Account, keinen Kinder-Account. Deshalb `.individual`-Autorisierung, nicht `.child`.
-- Das Eltern-iPhone nutzt einen anderen Apple-Account als das iPad.
+- Gesperrt werden ausschließlich geteilte iPads.
+- Die Eltern nutzen Android-Smartphones und Macs. Es gibt kein iPhone als Eltern-Gerät.
+- Das iPad zeigt beim Start einen QR-Code; die Eltern scannen ihn und steuern das iPad dann. Die Eltern-Seite darf eine PWA, eine statische Webseite oder eine native App sein.
 - Keine Drittanbieter-Apps, keine eigene Server-Infrastruktur, keine Kosten für Pushes. Möglichst wenig Daten verlassen die Geräte.
 - Kein MDM und kein Zurücksetzen des iPads.
 - Swift 6, SwiftUI. Die App braucht keine Funktion, die erst mit iOS 27 kommt; die Xcode-Version richtet sich nach dem, was auf dem Mac verfügbar ist.
@@ -24,27 +26,34 @@ Es ist eine **sanfte Sperre mit Nachweis**, keine unüberwindbare Sperre. Alle l
 Phase: Repo angelegt, Xcode-Projekt noch nicht.
 
 - **Auf dem Mac ist kein Xcode installiert**, nur die Command Line Tools (Swift 6.2.3). macOS ist 26.2.
-- Xcode 26.5 und 26.6 laufen auf macOS 26.2. Xcode 27.x verlangt macOS 26.6 oder neuer ([Systemanforderungen](https://developer.apple.com/xcode/system-requirements)).
-- Apple nennt für Xcode 26.6 On-Device-Debugging bis iOS 26.5. Laufen iPhone oder iPad schon mit iOS 27, ist vor den Spikes zu klären, ob sich das Projekt damit auf die Geräte bringen lässt; sonst wird Xcode 27 samt macOS-Update gebraucht.
-- Vorschlag, noch nicht bestätigt: Bundle-ID `de.haushoppe.countto3`, App Group `group.de.haushoppe.countto3`, Container `iCloud.de.haushoppe.countto3`. Vor dem Anlegen des Projekts Johannes fragen.
+- Entscheidung: **aktuelles macOS und aktuelles Xcode 27.x.** Xcode 27.x verlangt macOS 26.6 oder neuer und unterstützt On-Device-Debugging bis iOS 27 ([Systemanforderungen](https://developer.apple.com/xcode/system-requirements)). App-Store-Uploads verlangen ab April 2027 ohnehin das iOS-27-SDK ([Apple](https://developer.apple.com/news/?id=k1mtkt1k)).
+- Das macOS-Update plant Johannes selbst, weil auf dem Mac weitere Agenten laufen. Das Xcode-Projekt und die Spikes warten darauf.
+- Firma: Haushoppe-ITS. Kennungen: Bundle-ID `de.haushoppe-its.countto3`, App Group `group.de.haushoppe-its.countto3`, Container `iCloud.de.haushoppe-its.countto3`.
+
+## Offene Entscheidung: Eltern-Seite und Zustellung
+
+Diese Frage wird separat geklärt. Von ihr hängen Steuerkanal, Statuskanal und Spike 5 ab.
+
+- **CloudKit im Browser:** PWA nutzt CloudKit JS oder CloudKit Web Services. Es läuft ohne eigenen Server, die Eltern brauchen aber ein Apple-Konto und melden sich damit im Browser an. Ob das auf Android-Browsern reibungslos klappt, ist ungeprüft. `encryptedValues` sind laut einem Forenbeitrag im Web nicht zugänglich ([Forum](https://developer.apple.com/forums/thread/772640), ungeprüft); die Nutzdaten wären dann mit einem Schlüssel aus dem QR-Code selbst zu verschlüsseln.
+- **Kleines Relay:** PWA spricht mit einem eigenen Dienst, der über APNs und FCM zustellt. Der QR-Code reicht als Pairing, Eltern brauchen kein Konto und Web Push wird möglich. Es widerspricht aber „kein eigener Server“ und gefährdet womöglich das Label „Keine Daten erfasst“.
+- **Offen bei beiden:** Wie erfahren die Eltern von einer ausbleibenden Quittung, wenn die PWA gerade nicht offen ist?
 
 ## Vorgehen
 
 1. Xcode-Projekt anlegen: App-Target, Shield Configuration Extension, Shield Action Extension, DeviceActivityMonitor Extension, Notification Service Extension, gemeinsame App Group, CloudKit-Container. Capabilities: Family Controls, iCloud (CloudKit), Push Notifications, Background Modes → Remote notifications.
 2. Gemeinsames Swift-Package für das CloudKit-Datenmodell (`LockState`, `Heartbeat`), den Shield-Manager und die Heartbeat-Erzeugung.
-3. Spikes 1 bis 6 in dieser Reihenfolge, jeweils als minimaler Wegwerf-Prototyp ohne UI und mit Testanleitung für echte Geräte (iPhone als Eltern-Gerät, iPad als Kind-Gerät). Johannes trägt die Ergebnisse in `SPIKES.md` ein. **Danach anhalten und gemeinsam auswerten.**
-4. Erst danach: UI, Onboarding (Autorisierung, Pairing, Hinweis zu „Immer erlaubt“) und Auswertungslogik in der Eltern-App.
+3. Spikes 1 bis 6 in dieser Reihenfolge, jeweils als minimaler Wegwerf-Prototyp ohne UI und mit Testanleitung für das echte iPad. Spike 5 wartet auf die offene Entscheidung; die übrigen Spikes hängen nicht von ihr ab. Johannes trägt die Ergebnisse in `SPIKES.md` ein. **Danach anhalten und gemeinsam auswerten.**
+4. Erst danach: UI, Onboarding (Autorisierung, QR-Pairing, Hinweis zu „Immer erlaubt“) und Auswertungslogik auf der Eltern-Seite.
 
 ## Architektur
 
-**Eine App mit zwei Rollen**, gewählt beim ersten Start (Eltern oder Kind-Gerät). Begründung: Ein Store-Eintrag und ein Kauf decken beide Geräte ab, und beide Rollen teilen Container, Datenmodell und Pairing. Zwei Apps würden das Pairing für Nutzer und Review umständlicher machen.
+**Eine native App nur fürs iPad, die Eltern-Seite läuft im Browser.** Begründung: FamilyControls wird nur auf dem iPad gebraucht, und die Eltern-Geräte sind Android-Smartphones und Macs. Eine PWA deckt beide ab.
 
-Die Geräte sprechen über CloudKit-Sharing miteinander. Apple ist der einzige Zusteller.
-
-- **Steuerkanal (Eltern → iPad):** Zone `Control` in der privaten Datenbank der Eltern, Datensatz `LockState`, Felder in `encryptedValues`: `locked` (Int 0/1), `commandId` (String, UUID), `issuedAt` (Date). Daraus ein `CKShare`, Teilnehmerrecht nur lesen. Die Einladung per AirDrop oder Nachricht ans iPad ist das Pairing.
-- **Statuskanal (iPad → Eltern):** Spiegelbildlich Zone `Status` in der privaten Datenbank des Familien-Accounts, Datensatz `Heartbeat`, nur lesend mit dem Eltern-Account geteilt.
-- **Pushes:** Beide Seiten abonnieren ihre `sharedCloudDatabase` per `CKDatabaseSubscription`, mit `shouldSendContentAvailable = true`, einem sichtbaren Text als Fallback und `shouldSendMutableContent = true`, damit die Notification Service Extension überhaupt läuft.
-- **Fail-closed:** Verliert das iPad die Freigabe (Share entfernt oder nicht lesbar), bleibt es gesperrt oder wird gesperrt.
+- **Steuerdaten (Eltern → iPad):** `LockState` mit `locked` (Int 0/1), `commandId` (String, UUID), `issuedAt` (Date).
+- **Statusdaten (iPad → Eltern):** `Heartbeat`, siehe unten.
+- **Pairing:** Das iPad zeigt einen QR-Code. Ein Schlüssel im Fragment der URL (`#…`) bleibt beim Abruf der Seite auf dem Gerät.
+- **Pushes:** Damit die Notification Service Extension läuft, braucht der Push einen sichtbaren Text und `mutable-content`. Für den stillen Weckversuch kommt `content-available` dazu.
+- **Fail-closed:** Verliert das iPad die Verbindung zur Eltern-Seite dauerhaft oder wird die Kopplung ungültig, bleibt es gesperrt oder wird gesperrt.
 - **Sperren:** Benannter `ManagedSettingsStore` setzt `shield.applicationCategories = .all()` und `shield.webDomainCategories = .all()`. Entsperren leert den Store.
 - **Shield Configuration Extension:** Titel, Untertitel, Farben und Icon im Stil „Ich zähl bis drei“.
 - **Shield Action Extension:** Der Primärbutton antwortet mit `.close`.
@@ -53,7 +62,7 @@ Die Geräte sprechen über CloudKit-Sharing miteinander. Apple ist der einzige Z
 
 Felder von `Heartbeat`: `ackCommandId`, `shieldActive`, `authStatus`, `bootTime` (siehe Spike 4), `lowPowerMode` (`ProcessInfo.processInfo.isLowPowerModeEnabled`), `protectedDataAvailable` (`UIApplication.shared.isProtectedDataAvailable`), `sentAt`.
 
-Auswertung in der Eltern-App:
+Auswertung auf der Eltern-Seite:
 
 - **Quittung ist der Kern:** Nach „Sperren“ wird innerhalb weniger Minuten `ackCommandId == commandId` mit `shieldActive == true` erwartet. Bleibt das aus: „Nicht bestätigt – bitte nachsehen“.
 - **Eindeutige Umgehung:** `authStatus` ist nicht `.approved`.
@@ -96,7 +105,7 @@ Immer kennzeichnen, woher eine Aussage stammt. Die Screen-Time-API ist voller un
 | 2 | Wecken wiederkehrende Zeitfenster die DeviceActivityMonitor Extension zuverlässig, und kann sie `LockState` lesen und `Heartbeat` schreiben? | Netzwerk kommt laut Forum teils an, die Laufzeit ist knapp. Zwei CloudKit-Operationen in einem Callback sind das Risiko. |
 | 3 | Kann die Shield Action Extension CloudKit abfragen („Freigabe prüfen“)? | Apple-Mitarbeiter verneint das. Der Sekundärbutton ist deshalb nur eingeplant, falls der Spike das widerlegt. |
 | 4 | Ist `kern.boottime` auf iPadOS auslesbar und stabil? | `kern.boottime` steht nicht in Apples Liste, die Regel zur Bootzeit verbietet aber das Versenden. Vor dem Store klären, ob das Feld `bootTime` bleiben darf. |
-| 5 | Funktionieren Einladung, Annahme, `CKDatabaseSubscription` auf der geteilten Datenbank und `encryptedValues` im geteilten Datensatz zwischen zwei Accounts? | Teilweise dokumentiert, das Zusammenspiel ist offen. |
+| 5 | Trägt der gewählte Weg von der PWA zum iPad, einschließlich Android-Browser und Rückkanal? | Hängt an der offenen Entscheidung zur Zustellung. |
 | 6 | Was meldet die App nach einem Widerruf und nach einem Neustart der App wirklich? | Siehe `authorizationStatus` oben. |
 
 ## Name und Store
