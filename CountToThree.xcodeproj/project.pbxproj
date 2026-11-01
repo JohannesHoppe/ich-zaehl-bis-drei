@@ -1,0 +1,745 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C97B50F526AAF9AF5620C64 /* CountToThreeKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE08B4A1C36C53F47B0E491B /* CountToThreeKit */; };
+		69BEFDED91897436A0F7FA7B /* CountToThreeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93B4851C28394A6F63738E4A /* CountToThreeKit */; };
+		3BA262B538004F4F602BF7CE /* CountToThreeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7A1D9CDFB3F8068665137592 /* CountToThreeKit */; };
+		9F51DC73C9102F2A6637F543 /* CountToThreeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42566DFFA7EB62F0CF77E906 /* CountToThreeKit */; };
+		EE33AD082781B4DBF19D71BE /* ShieldConfigurationExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 705C352FA9994E02505C6127 /* ShieldConfigurationExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A79D6100C19D82729A3D9111 /* ShieldActionExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 35909F371380F1E3E7F2BD75 /* ShieldActionExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4BDA50587957B50C8D5DFD40 /* ActivityMonitorExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4236AF5306A352B3BB99BEC3 /* ActivityMonitorExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		00C57A09EF625C6A831FAD98 /* NotificationServiceExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4EE5CA8C928F169EFE3EFD47 /* NotificationServiceExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		503D6665260CDE005B8F1197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C38E6187F917566CEFCE30A;
+			remoteInfo = ShieldConfigurationExt;
+		};
+		2D29C8CB997EDCEF9FDBF8F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60565DF7870B4FD6320F8930;
+			remoteInfo = ShieldActionExt;
+		};
+		FF99D3C87A5F358DE188A960 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B04CA13BC4EF7402C465AA2F;
+			remoteInfo = ActivityMonitorExt;
+		};
+		5A2A2E1FAFA513588D8F2FCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 594AE9653FCA34A48FBB4549;
+			remoteInfo = NotificationServiceExt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		425893CE4AEDF359C5F0F0D7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EE33AD082781B4DBF19D71BE /* ShieldConfigurationExt.appex in Embed Foundation Extensions */,
+				A79D6100C19D82729A3D9111 /* ShieldActionExt.appex in Embed Foundation Extensions */,
+				4BDA50587957B50C8D5DFD40 /* ActivityMonitorExt.appex in Embed Foundation Extensions */,
+				00C57A09EF625C6A831FAD98 /* NotificationServiceExt.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2AA163B930FB37546BB88503 /* CountToThree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountToThree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		705C352FA9994E02505C6127 /* ShieldConfigurationExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldConfigurationExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		35909F371380F1E3E7F2BD75 /* ShieldActionExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldActionExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4236AF5306A352B3BB99BEC3 /* ActivityMonitorExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActivityMonitorExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EE5CA8C928F169EFE3EFD47 /* NotificationServiceExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5B72A2B1F41F1E779ED38A51 /* App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = App;
+			sourceTree = "<group>";
+		};
+		3996FAD39CCAAD34DA2F3AF8 /* ShieldConfigurationExt */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ShieldConfigurationExt;
+			sourceTree = "<group>";
+		};
+		5944C6D7348DA61E567D9BC6 /* ShieldActionExt */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ShieldActionExt;
+			sourceTree = "<group>";
+		};
+		1627DC963E4777ECFBD051B9 /* ActivityMonitorExt */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ActivityMonitorExt;
+			sourceTree = "<group>";
+		};
+		5115675C60F5159B5242A486 /* NotificationServiceExt */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NotificationServiceExt;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		072D94AD88333CFF7642997D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C97B50F526AAF9AF5620C64 /* CountToThreeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F1BDD0B3A6E7B6AC00D5B1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869200BEEBF05A059548DCEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69BEFDED91897436A0F7FA7B /* CountToThreeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D18AD4347CEAF8C29134E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA262B538004F4F602BF7CE /* CountToThreeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3FFB14141282B87D651778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F51DC73C9102F2A6637F543 /* CountToThreeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B731CEFC6751AAE0EC69B98 = {
+			isa = PBXGroup;
+			children = (
+				5B72A2B1F41F1E779ED38A51 /* App */,
+				3996FAD39CCAAD34DA2F3AF8 /* ShieldConfigurationExt */,
+				5944C6D7348DA61E567D9BC6 /* ShieldActionExt */,
+				1627DC963E4777ECFBD051B9 /* ActivityMonitorExt */,
+				5115675C60F5159B5242A486 /* NotificationServiceExt */,
+				86024CAD1E83101D97359D73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86024CAD1E83101D97359D73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AA163B930FB37546BB88503 /* CountToThree.app */,
+				705C352FA9994E02505C6127 /* ShieldConfigurationExt.appex */,
+				35909F371380F1E3E7F2BD75 /* ShieldActionExt.appex */,
+				4236AF5306A352B3BB99BEC3 /* ActivityMonitorExt.appex */,
+				4EE5CA8C928F169EFE3EFD47 /* NotificationServiceExt.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4D30D232BF6766A33F27D23 /* CountToThree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B563E581FC3044C94AD9ED2F;
+			buildPhases = (
+				BA5F3F9FEEBB7E497F9BE2F6 /* Sources */,
+				072D94AD88333CFF7642997D /* Frameworks */,
+				85A42BCF461D8CDCBB81CBAF /* Resources */,
+				425893CE4AEDF359C5F0F0D7 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EA8BF03EE4E6533CF466258 /* PBXTargetDependency */,
+				1D1EDD083A0300F609ECBF29 /* PBXTargetDependency */,
+				92EC13874E05517FE932147B /* PBXTargetDependency */,
+				CA26EA83975E5B7782559EAD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5B72A2B1F41F1E779ED38A51 /* App */,
+			);
+			name = CountToThree;
+			packageProductDependencies = (
+				CE08B4A1C36C53F47B0E491B /* CountToThreeKit */,
+			);
+			productName = CountToThree;
+			productReference = 2AA163B930FB37546BB88503 /* CountToThree.app */;
+			productType = com.apple.product-type.application;
+		};
+		3C38E6187F917566CEFCE30A /* ShieldConfigurationExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 428B7C3F21C83143FBECE900;
+			buildPhases = (
+				80C5D31F77195DEEF54CBD93 /* Sources */,
+				4F1BDD0B3A6E7B6AC00D5B1E /* Frameworks */,
+				F6DF61EC0A3C7FF1681D8DC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3996FAD39CCAAD34DA2F3AF8 /* ShieldConfigurationExt */,
+			);
+			name = ShieldConfigurationExt;
+			packageProductDependencies = (
+			);
+			productName = ShieldConfigurationExt;
+			productReference = 705C352FA9994E02505C6127 /* ShieldConfigurationExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		60565DF7870B4FD6320F8930 /* ShieldActionExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FCA71381E019316ADE46A0;
+			buildPhases = (
+				CB80A6B8D68FCA3EC5265E94 /* Sources */,
+				869200BEEBF05A059548DCEA /* Frameworks */,
+				066DDE16E13CF5AB64134C62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5944C6D7348DA61E567D9BC6 /* ShieldActionExt */,
+			);
+			name = ShieldActionExt;
+			packageProductDependencies = (
+				93B4851C28394A6F63738E4A /* CountToThreeKit */,
+			);
+			productName = ShieldActionExt;
+			productReference = 35909F371380F1E3E7F2BD75 /* ShieldActionExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B04CA13BC4EF7402C465AA2F /* ActivityMonitorExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75525C271EE2DCF648BFD0E6;
+			buildPhases = (
+				3F5A3AAEE199F4B7F56FF842 /* Sources */,
+				A9D18AD4347CEAF8C29134E4 /* Frameworks */,
+				865D677AB3D6E7FB391A6EEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1627DC963E4777ECFBD051B9 /* ActivityMonitorExt */,
+			);
+			name = ActivityMonitorExt;
+			packageProductDependencies = (
+				7A1D9CDFB3F8068665137592 /* CountToThreeKit */,
+			);
+			productName = ActivityMonitorExt;
+			productReference = 4236AF5306A352B3BB99BEC3 /* ActivityMonitorExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		594AE9653FCA34A48FBB4549 /* NotificationServiceExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E35636FB46ABCE3ED058447;
+			buildPhases = (
+				8EAC92993678FD6DE8936A90 /* Sources */,
+				EF3FFB14141282B87D651778 /* Frameworks */,
+				6C89869D25180EF7FD36AA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5115675C60F5159B5242A486 /* NotificationServiceExt */,
+			);
+			name = NotificationServiceExt;
+			packageProductDependencies = (
+				42566DFFA7EB62F0CF77E906 /* CountToThreeKit */,
+			);
+			productName = NotificationServiceExt;
+			productReference = 4EE5CA8C928F169EFE3EFD47 /* NotificationServiceExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+			};
+			buildConfigurationList = 723E12116B77E661166AEF0E;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = de;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				de,
+				en,
+				Base,
+			);
+			mainGroup = 2B731CEFC6751AAE0EC69B98;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B1F0EC91477E7DD9C138A3AC /* XCLocalSwiftPackageReference "Packages/CountToThreeKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 86024CAD1E83101D97359D73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4D30D232BF6766A33F27D23 /* CountToThree */,
+				3C38E6187F917566CEFCE30A /* ShieldConfigurationExt */,
+				60565DF7870B4FD6320F8930 /* ShieldActionExt */,
+				B04CA13BC4EF7402C465AA2F /* ActivityMonitorExt */,
+				594AE9653FCA34A48FBB4549 /* NotificationServiceExt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85A42BCF461D8CDCBB81CBAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6DF61EC0A3C7FF1681D8DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		066DDE16E13CF5AB64134C62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		865D677AB3D6E7FB391A6EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C89869D25180EF7FD36AA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA5F3F9FEEBB7E497F9BE2F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C5D31F77195DEEF54CBD93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB80A6B8D68FCA3EC5265E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F5A3AAEE199F4B7F56FF842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EAC92993678FD6DE8936A90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EA8BF03EE4E6533CF466258 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C38E6187F917566CEFCE30A /* ShieldConfigurationExt */;
+			targetProxy = 503D6665260CDE005B8F1197 /* PBXContainerItemProxy */;
+		};
+		1D1EDD083A0300F609ECBF29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60565DF7870B4FD6320F8930 /* ShieldActionExt */;
+			targetProxy = 2D29C8CB997EDCEF9FDBF8F4 /* PBXContainerItemProxy */;
+		};
+		92EC13874E05517FE932147B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B04CA13BC4EF7402C465AA2F /* ActivityMonitorExt */;
+			targetProxy = FF99D3C87A5F358DE188A960 /* PBXContainerItemProxy */;
+		};
+		CA26EA83975E5B7782559EAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 594AE9653FCA34A48FBB4549 /* NotificationServiceExt */;
+			targetProxy = 5A2A2E1FAFA513588D8F2FCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C56CC46ABEE1CC7CE78EC10A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		DFDCB59C46C97DA0789DD9D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = Config/CountToThree.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/CountToThree-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ich zähl bis drei";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		64FA945F53820654A7A565BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ShieldConfigurationExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/ShieldConfigurationExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Schild";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.ShieldConfiguration";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		470BB373D6032D0C075A99F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ShieldActionExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/ShieldActionExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Schild-Aktion";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.ShieldAction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D166A4DE5839382B9E81BB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ActivityMonitorExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/ActivityMonitorExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Taktgeber";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.ActivityMonitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		15F0366E12A397BC7B8F9CF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/NotificationServiceExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/NotificationServiceExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Push";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E51B9D4598CBC018C0ADBEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7A4A757974C761FA69310DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = Config/CountToThree.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/CountToThree-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ich zähl bis drei";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+		070DB4CDC334CF9C4085BBB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ShieldConfigurationExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/ShieldConfigurationExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Schild";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.ShieldConfiguration";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6A9E64E7DEEA601B07751470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ShieldActionExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/ShieldActionExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Schild-Aktion";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.ShieldAction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5AD638E13EC2BE81E37BD13E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ActivityMonitorExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/ActivityMonitorExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Taktgeber";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.ActivityMonitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0EFBCFF5488B505E1588D4AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/NotificationServiceExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/NotificationServiceExt-Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Push";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.haushoppe-its.countto3.NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		723E12116B77E661166AEF0E = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C56CC46ABEE1CC7CE78EC10A /* Debug */,
+				E51B9D4598CBC018C0ADBEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B563E581FC3044C94AD9ED2F = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFDCB59C46C97DA0789DD9D4 /* Debug */,
+				C7A4A757974C761FA69310DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		428B7C3F21C83143FBECE900 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64FA945F53820654A7A565BD /* Debug */,
+				070DB4CDC334CF9C4085BBB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3FCA71381E019316ADE46A0 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				470BB373D6032D0C075A99F1 /* Debug */,
+				6A9E64E7DEEA601B07751470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75525C271EE2DCF648BFD0E6 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D166A4DE5839382B9E81BB19 /* Debug */,
+				5AD638E13EC2BE81E37BD13E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E35636FB46ABCE3ED058447 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15F0366E12A397BC7B8F9CF9 /* Debug */,
+				0EFBCFF5488B505E1588D4AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B1F0EC91477E7DD9C138A3AC /* XCLocalSwiftPackageReference "Packages/CountToThreeKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/CountToThreeKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE08B4A1C36C53F47B0E491B /* CountToThreeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CountToThreeKit;
+		};
+		93B4851C28394A6F63738E4A /* CountToThreeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CountToThreeKit;
+		};
+		7A1D9CDFB3F8068665137592 /* CountToThreeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CountToThreeKit;
+		};
+		42566DFFA7EB62F0CF77E906 /* CountToThreeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CountToThreeKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}

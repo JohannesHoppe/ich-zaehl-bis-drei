@@ -1,0 +1,12 @@
+.DS_Store
+.build/
+DerivedData/
+build/
+xcuserdata/
+*.xcuserstate
+.swiftpm/
+
+# Signiermaterial liegt nur in den GitHub-Secrets.
+*.p8
+*.p12
+*.mobileprovision

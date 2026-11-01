@@ -1,0 +1,38 @@
+# Baut alle Targets unsigniert und testet das gemeinsame Package. Läuft ohne Secrets.
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: xcode-27
+    timeout-minutes: 30
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Versionen anzeigen
+        run: |
+          xcodebuild -version
+          swift --version
+      - name: Package testen
+        working-directory: Packages/CountToThreeKit
+        run: swift test
+      - name: App und Extensions bauen
+        run: |
+          xcodebuild build \
+            -project CountToThree.xcodeproj \
+            -scheme CountToThree \
+            -destination 'generic/platform=iOS' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO

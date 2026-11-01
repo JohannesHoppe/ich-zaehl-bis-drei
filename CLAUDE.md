@@ -23,11 +23,11 @@ Es ist eine **sanfte Sperre mit Nachweis**, keine unüberwindbare Sperre. Alle l
 
 ## Aktueller Stand
 
-Phase: Repo angelegt, Xcode-Projekt noch nicht.
+Phase: Xcode-Projekt und `CountToThreeKit` sind angelegt, Stufe 1 der CI baut sie. Als Nächstes kommt Spike 1, der Signieren fürs iPad braucht.
 
-- **Auf dem Mac ist kein Xcode installiert**, nur die Command Line Tools (Swift 6.2.3). macOS ist 26.2.
-- Entscheidung: **aktuelles macOS und aktuelles Xcode 27.x.** Xcode 27.x verlangt macOS 26.6 oder neuer und unterstützt On-Device-Debugging bis iOS 27 ([Systemanforderungen](https://developer.apple.com/xcode/system-requirements)). App-Store-Uploads verlangen ab April 2027 ohnehin das iOS-27-SDK ([Apple](https://developer.apple.com/news/?id=k1mtkt1k)).
-- Das macOS-Update plant Johannes selbst, weil auf dem Mac weitere Agenten laufen. Das Xcode-Projekt und die Spikes warten darauf.
+- Der Mac läuft mit macOS 27.2 und hat noch kein Xcode, nur die Command Line Tools. Dort baut `swift build` das Package; die Tests brauchen XCTest und damit Xcode oder die CI.
+- Deployment-Target ist iPadOS 17, die niedrigste Version, die Xcode 27 zulässt. `DEVELOPMENT_TEAM` ist im Projekt noch nicht gesetzt.
+- Entscheidung: **aktuelles Xcode 27.x.** Es unterstützt On-Device-Debugging bis iOS 27 ([Systemanforderungen](https://developer.apple.com/xcode/system-requirements)). App-Store-Uploads verlangen ab April 2027 das iOS-27-SDK ([Apple](https://developer.apple.com/news/?id=k1mtkt1k)).
 - Firma: Haushoppe-ITS. Kennungen: Bundle-ID `de.haushoppe-its.countto3`, App Group `group.de.haushoppe-its.countto3`, Container `iCloud.de.haushoppe-its.countto3`.
 
 ## Offene Entscheidung: Eltern-Seite und Zustellung
@@ -107,6 +107,16 @@ Immer kennzeichnen, woher eine Aussage stammt. Die Screen-Time-API ist voller un
 | 4 | Ist `kern.boottime` auf iPadOS auslesbar und stabil? | `kern.boottime` steht nicht in Apples Liste, die Regel zur Bootzeit verbietet aber das Versenden. Vor dem Store klären, ob das Feld `bootTime` bleiben darf. |
 | 5 | Trägt der gewählte Weg von der PWA zum iPad, einschließlich Android-Browser und Rückkanal? | Hängt an der offenen Entscheidung zur Zustellung. |
 | 6 | Was meldet die App nach einem Widerruf und nach einem Neustart der App wirklich? | Siehe `authorizationStatus` oben. |
+
+## CI
+
+Gebaut, signiert und hochgeladen wird möglichst auf GitHub Actions, nach dem Muster von [christinas-mail-sync](https://github.com/christinawietig/christinas-mail-sync). Runner ist `xcode-27`. Standard-Runner sind in öffentlichen Repos kostenlos ([GitHub](https://docs.github.com/en/billing/concepts/product-billing/github-actions)), `xcode-27-xlarge` wird nicht genutzt.
+
+- **Notarisierung entfällt.** Sie gilt für macOS-Software mit Developer ID außerhalb des Stores ([Apple](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution)). Die iPad-App geht über TestFlight und den App Store. Eine native Mac-App für die Eltern gibt es nicht; die Mac-Nutzung läuft über die PWA.
+- **Stufe 1, Kompilieren:** Jeder Push und Pull Request baut alle Targets unsigniert, ohne Secrets.
+- **Stufe 2, Entwicklungs-Build:** Signiert fürs registrierte iPad, gestartet von `main` oder von Hand. Secrets nur in der Umgebung `release`, nie in Pull Requests, temporärer Schlüsselbund, danach Aufräumen. Die Installation aufs iPad läuft lokal, solange TestFlight nicht verfügbar ist.
+- **Stufe 3, TestFlight:** Bei Versions-Tags, sobald das Distribution-Entitlement vorliegt. Veröffentlicht wird von Hand in App Store Connect.
+- Actions werden per Commit-SHA festgelegt und nur nach Johannes' Zustimmung ergänzt.
 
 ## Repo und Lizenz
 
