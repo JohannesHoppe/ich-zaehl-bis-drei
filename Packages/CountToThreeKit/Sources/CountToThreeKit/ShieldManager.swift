@@ -35,7 +35,8 @@ public extension AuthStatus {
         switch status {
         case .notDetermined: self = .notDetermined
         case .denied: self = .denied
-        case .approved: self = .approved
+        // Beide Fälle bedeuten: Die Sperre darf wirken. Ein anderer Status würde als Umgehung gemeldet.
+        case .approved, .approvedWithDataAccess: self = .approved
         @unknown default: self = .unknown
         }
     }
